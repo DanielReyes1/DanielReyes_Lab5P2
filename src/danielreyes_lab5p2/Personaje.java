@@ -87,13 +87,13 @@ public class Personaje {
     @Override
     public String toString() {
         return nombre + 
-                "\n          Poder: " + poder + 
-                "\n          Debilidad: " + debilidad + 
-                "\n          Universo: " + universo + 
-                "\n          Fuerza: " + fuerza + 
-                "\n          Fisica: " + fisica + 
-                "\n          Mental: " + mental + 
-                "\n          Hp: " + hp ;
+                "\n      Poder: " + poder + 
+                "\n      Debilidad: " + debilidad + 
+                "\n      Universo: " + universo + 
+                "\n      Fuerza: " + fuerza + 
+                "\n      Fisica: " + fisica + 
+                "\n      Mental: " + mental + 
+                "\n      Hp: " + hp ;
     }
     
     

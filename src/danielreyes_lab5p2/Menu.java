@@ -4,6 +4,8 @@
  */
 package danielreyes_lab5p2;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author alema
@@ -37,16 +39,16 @@ public class Menu extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         textfielddebilidad = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboboxu = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        formattedfieldfuerza = new javax.swing.JFormattedTextField();
         jLabel8 = new javax.swing.JLabel();
-        formattedfieldfisica = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
-        formattedfieldfisica1 = new javax.swing.JFormattedTextField();
         jLabel10 = new javax.swing.JLabel();
-        formattedfieldfisica2 = new javax.swing.JFormattedTextField();
-        jButton1 = new javax.swing.JButton();
+        buttoncrear = new javax.swing.JButton();
+        spinnerfuerza = new javax.swing.JSpinner();
+        spinnerfisica = new javax.swing.JSpinner();
+        spinnermental = new javax.swing.JSpinner();
+        spinnerhp = new javax.swing.JSpinner();
         panelmenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         button_agregar = new javax.swing.JButton();
@@ -71,32 +73,37 @@ public class Menu extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         jLabel6.setText("Universo");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DC", "Marvel", "Capcom", "Mortal Kombat" }));
+        comboboxu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DC", "Marvel", "Capcom", "Mortal Kombat" }));
 
         jLabel7.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         jLabel7.setText("Fuerza");
 
-        formattedfieldfuerza.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
-
         jLabel8.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         jLabel8.setText("Física");
-
-        formattedfieldfisica.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
 
         jLabel9.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         jLabel9.setText("Mental");
 
-        formattedfieldfisica1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
-
         jLabel10.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         jLabel10.setText("HP");
 
-        formattedfieldfisica2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        buttoncrear.setBackground(new java.awt.Color(0, 0, 0));
+        buttoncrear.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        buttoncrear.setForeground(new java.awt.Color(255, 255, 255));
+        buttoncrear.setText("Crear");
+        buttoncrear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttoncrearMouseClicked(evt);
+            }
+        });
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Crear");
+        spinnerfuerza.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerfisica.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnermental.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerhp.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -114,21 +121,25 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, 330, Short.MAX_VALUE)
+                        .addComponent(comboboxu, javax.swing.GroupLayout.Alignment.LEADING, 0, 330, Short.MAX_VALUE)
                         .addComponent(textfielddebilidad, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(textfieldnombre, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(textfieldpoder, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(formattedfieldfuerza, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(formattedfieldfisica, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(formattedfieldfisica1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(formattedfieldfisica2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttoncrear, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(spinnerhp, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(spinnermental, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(spinnerfisica, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(spinnerfuerza, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)))
                 .addGap(84, 84, 84))
         );
         jPanel1Layout.setVerticalGroup(
@@ -143,7 +154,7 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textfieldnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(formattedfieldfuerza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spinnerfuerza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -151,7 +162,7 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textfieldpoder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(formattedfieldfisica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spinnerfisica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -159,20 +170,17 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textfielddebilidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(formattedfieldfisica1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spinnermental, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel10))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(formattedfieldfisica2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboboxu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinnerhp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttoncrear, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
         );
 
@@ -197,6 +205,11 @@ public class Menu extends javax.swing.JFrame {
 
         button_agregar.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         button_agregar.setText("Agregar Personaje");
+        button_agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_agregarMouseClicked(evt);
+            }
+        });
 
         button_batalla.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         button_batalla.setText("Simulación de Batalla");
@@ -207,6 +220,11 @@ public class Menu extends javax.swing.JFrame {
         button_salir.setBackground(new java.awt.Color(255, 153, 153));
         button_salir.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         button_salir.setText("Salir");
+        button_salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_salirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelmenuLayout = new javax.swing.GroupLayout(panelmenu);
         panelmenu.setLayout(panelmenuLayout);
@@ -252,6 +270,39 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void button_agregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_agregarMouseClicked
+        this.setVisible(false);
+        frameagregar.pack();
+        frameagregar.setLocationRelativeTo(this);
+        frameagregar.setVisible(true);
+        
+    }//GEN-LAST:event_button_agregarMouseClicked
+
+    private void buttoncrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttoncrearMouseClicked
+        Personaje p;
+        
+        p = new Personaje(textfieldnombre.getText(), textfieldpoder.getText(), textfielddebilidad.getText(), comboboxu.getSelectedItem().toString(),((Integer)spinnerfuerza.getValue()) , ((Integer)spinnerfisica.getValue()), ((Integer)spinnermental.getValue()), ((Integer)spinnerhp.getValue()));
+        listapersonajes.add(p);
+        System.out.println(listapersonajes);
+        textfieldnombre.setText("");
+        textfieldpoder.setText("");
+        textfielddebilidad.setText("");
+        comboboxu.setSelectedIndex(0);
+        spinnerfuerza.setValue(0);
+        spinnerfisica.setValue(0);
+        spinnerhp.setValue(0);
+        spinnermental.setValue(0);
+        frameagregar.setVisible(false);
+        this.pack();
+        this.setLocationRelativeTo(this);
+        this.setVisible(true);
+        
+    }//GEN-LAST:event_buttoncrearMouseClicked
+
+    private void button_salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_salirMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_button_salirMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -292,13 +343,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton button_batalla;
     private javax.swing.JButton button_listado;
     private javax.swing.JButton button_salir;
-    private javax.swing.JFormattedTextField formattedfieldfisica;
-    private javax.swing.JFormattedTextField formattedfieldfisica1;
-    private javax.swing.JFormattedTextField formattedfieldfisica2;
-    private javax.swing.JFormattedTextField formattedfieldfuerza;
+    private javax.swing.JButton buttoncrear;
+    private javax.swing.JComboBox<String> comboboxu;
     private javax.swing.JFrame frameagregar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -311,8 +358,17 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel panelmenu;
+    private javax.swing.JSpinner spinnerfisica;
+    private javax.swing.JSpinner spinnerfuerza;
+    private javax.swing.JSpinner spinnerhp;
+    private javax.swing.JSpinner spinnermental;
     private javax.swing.JTextField textfielddebilidad;
     private javax.swing.JTextField textfieldnombre;
     private javax.swing.JTextField textfieldpoder;
     // End of variables declaration//GEN-END:variables
+    ArrayList<Personaje> listapersonajes = new ArrayList();
+    
+
+
+
 }
