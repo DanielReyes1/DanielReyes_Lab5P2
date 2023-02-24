@@ -7,6 +7,8 @@ package danielreyes_lab5p2;
 import java.util.ArrayList;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.MutableTreeNode;
+import javax.swing.tree.TreeModel;
 
 /**
  *
@@ -31,6 +33,10 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popupmenutree = new javax.swing.JPopupMenu();
+        menuitemmodificar = new javax.swing.JMenuItem();
+        menuitemeliminar = new javax.swing.JMenuItem();
+        menuitemlistar = new javax.swing.JMenuItem();
         frameagregar = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -59,12 +65,51 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jlist = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
+        framemodificar = new javax.swing.JFrame();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        textfieldnombre1 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        textfieldpoder1 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        textfielddebilidad1 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        comboboxu1 = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        buttoncrear1 = new javax.swing.JButton();
+        spinnerfuerza1 = new javax.swing.JSpinner();
+        spinnerfisica1 = new javax.swing.JSpinner();
+        spinnermental1 = new javax.swing.JSpinner();
+        spinnerhp1 = new javax.swing.JSpinner();
         panelmenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         button_agregar = new javax.swing.JButton();
         button_batalla = new javax.swing.JButton();
         button_listado = new javax.swing.JButton();
         button_salir = new javax.swing.JButton();
+
+        menuitemmodificar.setText("Modificar el personaje");
+        menuitemmodificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuitemmodificarActionPerformed(evt);
+            }
+        });
+        popupmenutree.add(menuitemmodificar);
+
+        menuitemeliminar.setText("Eliminar el personaje");
+        menuitemeliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuitemeliminarActionPerformed(evt);
+            }
+        });
+        popupmenutree.add(menuitemeliminar);
+
+        menuitemlistar.setText("Listar ");
+        popupmenutree.add(menuitemlistar);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -212,6 +257,11 @@ public class Menu extends javax.swing.JFrame {
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Personajes");
         jtree.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jtree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtreeMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jtree);
 
         jlist.setModel(new javax.swing.AbstractListModel<String>() {
@@ -273,6 +323,145 @@ public class Menu extends javax.swing.JFrame {
         framelistadoLayout.setVerticalGroup(
             framelistadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 204));
+
+        jLabel12.setFont(new java.awt.Font("Lucida Handwriting", 3, 48)); // NOI18N
+        jLabel12.setText("Modificar");
+
+        jLabel13.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
+        jLabel13.setText("Nombre");
+
+        jLabel14.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
+        jLabel14.setText("Poder");
+
+        jLabel15.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
+        jLabel15.setText("Debilidad");
+
+        jLabel16.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
+        jLabel16.setText("Universo");
+
+        comboboxu1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DC", "Marvel", "Capcom", "Mortal Kombat" }));
+
+        jLabel17.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
+        jLabel17.setText("Fuerza");
+
+        jLabel18.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
+        jLabel18.setText("Física");
+
+        jLabel19.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
+        jLabel19.setText("Mental");
+
+        jLabel20.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
+        jLabel20.setText("HP");
+
+        buttoncrear1.setBackground(new java.awt.Color(0, 0, 0));
+        buttoncrear1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 18)); // NOI18N
+        buttoncrear1.setForeground(new java.awt.Color(255, 255, 255));
+        buttoncrear1.setText("Modificar");
+        buttoncrear1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttoncrear1MouseClicked(evt);
+            }
+        });
+
+        spinnerfuerza1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerfisica1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnermental1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        spinnerhp1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(comboboxu1, javax.swing.GroupLayout.Alignment.LEADING, 0, 330, Short.MAX_VALUE)
+                        .addComponent(textfielddebilidad1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(textfieldnombre1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(textfieldpoder1, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttoncrear1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(spinnerhp1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(spinnermental1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(spinnerfisica1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(spinnerfuerza1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)))
+                .addGap(84, 84, 84))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(278, Short.MAX_VALUE)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(211, 211, 211))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textfieldnombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinnerfuerza1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textfieldpoder1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinnerfisica1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textfielddebilidad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinnermental1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboboxu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinnerhp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(buttoncrear1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
+        );
+
+        javax.swing.GroupLayout framemodificarLayout = new javax.swing.GroupLayout(framemodificar.getContentPane());
+        framemodificar.getContentPane().setLayout(framemodificarLayout);
+        framemodificarLayout.setHorizontalGroup(
+            framemodificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        framemodificarLayout.setVerticalGroup(
+            framemodificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -372,17 +561,28 @@ public class Menu extends javax.swing.JFrame {
         //agregar al tree
         DefaultTreeModel modelo = (DefaultTreeModel) jtree.getModel();
         DefaultMutableTreeNode root = (DefaultMutableTreeNode) modelo.getRoot();
-        DefaultMutableTreeNode nodo_universo = new DefaultMutableTreeNode(comboboxu.getSelectedItem().toString());
-        DefaultMutableTreeNode nodo_nombre = new DefaultMutableTreeNode(textfieldnombre.getText());
+        DefaultMutableTreeNode nodo_nombre = new DefaultMutableTreeNode(p);
         
+        int cont = 0;
         for (int i = 0; i < root.getChildCount(); i++) {
             if(root.getChildAt(i).toString().equals(comboboxu.getSelectedItem().toString())){
-                
+                cont++;
+               
             }
         }
-        
-        nodo_universo.add(nodo_nombre);
-        root.add(nodo_universo);
+        if (cont >0){
+            for (int i = 0; i < root.getChildCount(); i++) {
+                if(root.getChildAt(i).toString().equals(comboboxu.getSelectedItem().toString())){
+                    ((DefaultMutableTreeNode)root.getChildAt(i)).add(nodo_nombre);
+                    break;
+                }
+            }
+            
+        }else{
+            DefaultMutableTreeNode nodo_universo = new DefaultMutableTreeNode(comboboxu.getSelectedItem().toString());
+            nodo_universo.add(nodo_nombre);
+            root.add(nodo_universo);
+        }
         modelo.reload();
         
         
@@ -404,7 +604,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_buttoncrearMouseClicked
 
     private void button_salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_salirMouseClicked
-        this.dispose();
+       System.exit(0);
     }//GEN-LAST:event_button_salirMouseClicked
 
     private void button_listadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_listadoMouseClicked
@@ -421,6 +621,41 @@ public class Menu extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);
         this.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jtreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtreeMouseClicked
+        jtree.setSelectionRow(jtree.getClosestRowForLocation(evt.getX(), evt.getY()));
+        DefaultMutableTreeNode nodoactual = (DefaultMutableTreeNode)jtree.getSelectionPath().getLastPathComponent();
+        nodo_actual = nodoactual;
+        if(evt.getButton()== 3){
+            
+            if( nodoactual.getUserObject() instanceof Personaje ){
+                
+                popupmenutree.show(evt.getComponent(), evt.getX(), evt.getY());
+                
+            }
+            
+            
+            
+        }
+    }//GEN-LAST:event_jtreeMouseClicked
+
+    private void buttoncrear1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttoncrear1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttoncrear1MouseClicked
+
+    private void menuitemmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitemmodificarActionPerformed
+    
+    }//GEN-LAST:event_menuitemmodificarActionPerformed
+
+    private void menuitemeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitemeliminarActionPerformed
+        DefaultTreeModel modelo = (DefaultTreeModel) jtree.getModel();
+        DefaultMutableTreeNode root = (DefaultMutableTreeNode) modelo.getRoot();
+        modelo.removeNodeFromParent(nodo_actual);
+        
+        modelo.reload();
+        
+        
+    }//GEN-LAST:event_menuitemeliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -463,14 +698,26 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton button_listado;
     private javax.swing.JButton button_salir;
     private javax.swing.JButton buttoncrear;
+    private javax.swing.JButton buttoncrear1;
     private javax.swing.JComboBox<String> comboboxu;
+    private javax.swing.JComboBox<String> comboboxu1;
     private javax.swing.JFrame frameagregar;
     private javax.swing.JFrame framelistado;
+    private javax.swing.JFrame framemodificar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -480,21 +727,33 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> jlist;
     private javax.swing.JTree jtree;
+    private javax.swing.JMenuItem menuitemeliminar;
+    private javax.swing.JMenuItem menuitemlistar;
+    private javax.swing.JMenuItem menuitemmodificar;
     private javax.swing.JPanel panelmenu;
+    private javax.swing.JPopupMenu popupmenutree;
     private javax.swing.JSpinner spinnerfisica;
+    private javax.swing.JSpinner spinnerfisica1;
     private javax.swing.JSpinner spinnerfuerza;
+    private javax.swing.JSpinner spinnerfuerza1;
     private javax.swing.JSpinner spinnerhp;
+    private javax.swing.JSpinner spinnerhp1;
     private javax.swing.JSpinner spinnermental;
+    private javax.swing.JSpinner spinnermental1;
     private javax.swing.JTextField textfielddebilidad;
+    private javax.swing.JTextField textfielddebilidad1;
     private javax.swing.JTextField textfieldnombre;
+    private javax.swing.JTextField textfieldnombre1;
     private javax.swing.JTextField textfieldpoder;
+    private javax.swing.JTextField textfieldpoder1;
     // End of variables declaration//GEN-END:variables
     ArrayList<Personaje> listapersonajes = new ArrayList();
-    
+    DefaultMutableTreeNode nodo_actual;
 
 
 
