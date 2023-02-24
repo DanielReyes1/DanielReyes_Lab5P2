@@ -5,6 +5,8 @@
 package danielreyes_lab5p2;
 
 import java.util.ArrayList;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -49,6 +51,14 @@ public class Menu extends javax.swing.JFrame {
         spinnerfisica = new javax.swing.JSpinner();
         spinnermental = new javax.swing.JSpinner();
         spinnerhp = new javax.swing.JSpinner();
+        framelistado = new javax.swing.JFrame();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtree = new javax.swing.JTree();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jlist = new javax.swing.JList<>();
+        jButton1 = new javax.swing.JButton();
         panelmenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         button_agregar = new javax.swing.JButton();
@@ -195,6 +205,76 @@ public class Menu extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel11.setFont(new java.awt.Font("Lucida Handwriting", 3, 48)); // NOI18N
+        jLabel11.setText("Listado");
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Personajes");
+        jtree.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(jtree);
+
+        jlist.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { " " };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jlist);
+
+        jButton1.setBackground(new java.awt.Color(51, 51, 51));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Volver");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(222, 222, 222))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(127, 127, 127)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(336, 336, 336)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(22, 22, 22))
+        );
+
+        javax.swing.GroupLayout framelistadoLayout = new javax.swing.GroupLayout(framelistado.getContentPane());
+        framelistado.getContentPane().setLayout(framelistadoLayout);
+        framelistadoLayout.setHorizontalGroup(
+            framelistadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        framelistadoLayout.setVerticalGroup(
+            framelistadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panelmenu.setBackground(new java.awt.Color(255, 102, 102));
@@ -216,6 +296,11 @@ public class Menu extends javax.swing.JFrame {
 
         button_listado.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         button_listado.setText("Listado de Personajes");
+        button_listado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_listadoMouseClicked(evt);
+            }
+        });
 
         button_salir.setBackground(new java.awt.Color(255, 153, 153));
         button_salir.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
@@ -283,7 +368,25 @@ public class Menu extends javax.swing.JFrame {
         
         p = new Personaje(textfieldnombre.getText(), textfieldpoder.getText(), textfielddebilidad.getText(), comboboxu.getSelectedItem().toString(),((Integer)spinnerfuerza.getValue()) , ((Integer)spinnerfisica.getValue()), ((Integer)spinnermental.getValue()), ((Integer)spinnerhp.getValue()));
         listapersonajes.add(p);
-        System.out.println(listapersonajes);
+        
+        //agregar al tree
+        DefaultTreeModel modelo = (DefaultTreeModel) jtree.getModel();
+        DefaultMutableTreeNode root = (DefaultMutableTreeNode) modelo.getRoot();
+        DefaultMutableTreeNode nodo_universo = new DefaultMutableTreeNode(comboboxu.getSelectedItem().toString());
+        DefaultMutableTreeNode nodo_nombre = new DefaultMutableTreeNode(textfieldnombre.getText());
+        
+        for (int i = 0; i < root.getChildCount(); i++) {
+            if(root.getChildAt(i).toString().equals(comboboxu.getSelectedItem().toString())){
+                
+            }
+        }
+        
+        nodo_universo.add(nodo_nombre);
+        root.add(nodo_universo);
+        modelo.reload();
+        
+        
+        //reset espacios
         textfieldnombre.setText("");
         textfieldpoder.setText("");
         textfielddebilidad.setText("");
@@ -292,6 +395,7 @@ public class Menu extends javax.swing.JFrame {
         spinnerfisica.setValue(0);
         spinnerhp.setValue(0);
         spinnermental.setValue(0);
+        
         frameagregar.setVisible(false);
         this.pack();
         this.setLocationRelativeTo(this);
@@ -302,6 +406,21 @@ public class Menu extends javax.swing.JFrame {
     private void button_salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_salirMouseClicked
         this.dispose();
     }//GEN-LAST:event_button_salirMouseClicked
+
+    private void button_listadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_listadoMouseClicked
+    this.setVisible(false);
+    framelistado.pack();
+    framelistado.setLocationRelativeTo(this);
+    framelistado.setVisible(true);
+    
+    }//GEN-LAST:event_button_listadoMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        framelistado.setVisible(false);
+        this.pack();
+        this.setLocationRelativeTo(this);
+        this.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -346,8 +465,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton buttoncrear;
     private javax.swing.JComboBox<String> comboboxu;
     private javax.swing.JFrame frameagregar;
+    private javax.swing.JFrame framelistado;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -357,6 +479,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> jlist;
+    private javax.swing.JTree jtree;
     private javax.swing.JPanel panelmenu;
     private javax.swing.JSpinner spinnerfisica;
     private javax.swing.JSpinner spinnerfuerza;
