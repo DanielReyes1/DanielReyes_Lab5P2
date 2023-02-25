@@ -99,6 +99,15 @@ public class Menu extends javax.swing.JFrame {
         jlist2 = new javax.swing.JList<>();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        frameSimulacion = new javax.swing.JFrame();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        textareasimulacion = new javax.swing.JTextArea();
+        textfieldindicadorturnos = new javax.swing.JTextField();
+        buttonFuerza = new javax.swing.JButton();
+        buttonFisico = new javax.swing.JButton();
+        buttonMental = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         panelmenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         button_agregar = new javax.swing.JButton();
@@ -574,6 +583,73 @@ public class Menu extends javax.swing.JFrame {
         framebatallaLayout.setVerticalGroup(
             framebatallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+
+        textareasimulacion.setEditable(false);
+        textareasimulacion.setColumns(20);
+        textareasimulacion.setRows(5);
+        jScrollPane5.setViewportView(textareasimulacion);
+
+        textfieldindicadorturnos.setEditable(false);
+
+        buttonFuerza.setText("Fuerza");
+
+        buttonFisico.setText("Física");
+
+        buttonMental.setText("Mental");
+
+        jButton4.setBackground(new java.awt.Color(255, 153, 102));
+        jButton4.setText("X");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(textfieldindicadorturnos, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(buttonFuerza, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(122, 122, 122)
+                        .addComponent(buttonFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonMental, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(92, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(textfieldindicadorturnos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonFuerza, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonMental, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout frameSimulacionLayout = new javax.swing.GroupLayout(frameSimulacion.getContentPane());
+        frameSimulacion.getContentPane().setLayout(frameSimulacionLayout);
+        frameSimulacionLayout.setHorizontalGroup(
+            frameSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        frameSimulacionLayout.setVerticalGroup(
+            frameSimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1052,6 +1128,9 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonFisico;
+    private javax.swing.JButton buttonFuerza;
+    private javax.swing.JButton buttonMental;
     private javax.swing.JButton button_agregar;
     private javax.swing.JButton button_batalla;
     private javax.swing.JButton button_listado;
@@ -1062,6 +1141,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboboxu1;
     private javax.swing.JComboBox<String> comboboxu2;
     private javax.swing.JComboBox<String> comboboxu3;
+    private javax.swing.JFrame frameSimulacion;
     private javax.swing.JFrame frameagregar;
     private javax.swing.JFrame framebatalla;
     private javax.swing.JFrame framelistado;
@@ -1070,6 +1150,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1094,10 +1175,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JList<String> jlist;
     private javax.swing.JList<String> jlist2;
     private javax.swing.JList<String> jlist3;
@@ -1116,8 +1199,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JSpinner spinnerhp1;
     private javax.swing.JSpinner spinnermental;
     private javax.swing.JSpinner spinnermental1;
+    private javax.swing.JTextArea textareasimulacion;
     private javax.swing.JTextField textfielddebilidad;
     private javax.swing.JTextField textfielddebilidad1;
+    private javax.swing.JTextField textfieldindicadorturnos;
     private javax.swing.JTextField textfieldnombre;
     private javax.swing.JTextField textfieldnombre1;
     private javax.swing.JTextField textfieldpoder;
