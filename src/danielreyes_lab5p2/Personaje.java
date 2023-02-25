@@ -92,14 +92,14 @@ public class Personaje {
     }
     
     public String toStringnombre(){
-        return nombre + 
-                "\n      Poder-> " + poder + 
-                "\n      Debilidad-> " + debilidad + 
-                "\n      Universo-> " + universo + 
-                "\n      Fuerza-> " + fuerza + 
-                "\n      Fisica-> " + fisica + 
-                "\n      Mental-> " + mental + 
-                "\n      Hp-> " + hp ;
+        return 
+                "Poder-> " + poder + "  -  "+
+                "Debilidad-> " + debilidad + "  -  "+
+                "\nUniverso-> " + universo + "  -  "+
+                "\nFuerza-> " + fuerza + "  -  "+
+                "\nFisica-> " + fisica + "  -  "+
+                "\nMental-> " + mental + "  -  "+
+                "\nHp-> " + hp ;
     }
     
     

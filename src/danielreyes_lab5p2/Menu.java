@@ -5,6 +5,7 @@
 package danielreyes_lab5p2;
 
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
@@ -37,6 +38,8 @@ public class Menu extends javax.swing.JFrame {
         menuitemmodificar = new javax.swing.JMenuItem();
         menuitemeliminar = new javax.swing.JMenuItem();
         menuitemlistar = new javax.swing.JMenuItem();
+        popupmenuuniverso = new javax.swing.JPopupMenu();
+        itemlistar = new javax.swing.JMenuItem();
         frameagregar = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -65,6 +68,7 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jlist = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
+        textfielimprimidor = new javax.swing.JTextField();
         framemodificar = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -85,6 +89,16 @@ public class Menu extends javax.swing.JFrame {
         spinnerfisica1 = new javax.swing.JSpinner();
         spinnermental1 = new javax.swing.JSpinner();
         spinnerhp1 = new javax.swing.JSpinner();
+        framebatalla = new javax.swing.JFrame();
+        jPanel4 = new javax.swing.JPanel();
+        comboboxu2 = new javax.swing.JComboBox<>();
+        comboboxu3 = new javax.swing.JComboBox<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jlist3 = new javax.swing.JList<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jlist2 = new javax.swing.JList<>();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         panelmenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         button_agregar = new javax.swing.JButton();
@@ -109,7 +123,20 @@ public class Menu extends javax.swing.JFrame {
         popupmenutree.add(menuitemeliminar);
 
         menuitemlistar.setText("Listar ");
+        menuitemlistar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuitemlistarActionPerformed(evt);
+            }
+        });
         popupmenutree.add(menuitemlistar);
+
+        itemlistar.setText("Listar nombres del universo");
+        itemlistar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemlistarActionPerformed(evt);
+            }
+        });
+        popupmenuuniverso.add(itemlistar);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -134,7 +161,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel7.setText("Fuerza");
 
         jLabel8.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
-        jLabel8.setText("Física");
+        jLabel8.setText("Físico");
 
         jLabel9.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         jLabel9.setText("Mental");
@@ -264,11 +291,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtree);
 
-        jlist.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { " " };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        jlist.setModel(new DefaultListModel());
         jScrollPane2.setViewportView(jlist);
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
@@ -280,6 +303,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        textfielimprimidor.setEditable(false);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -287,7 +312,9 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(222, 222, 222))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textfielimprimidor, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(103, 103, 103))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -304,11 +331,13 @@ public class Menu extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textfielimprimidor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(22, 22, 22))
@@ -464,6 +493,89 @@ public class Menu extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jPanel4.setBackground(new java.awt.Color(204, 255, 204));
+
+        comboboxu2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DC", "Marvel", "Capcom", "Mortal Kombat" }));
+        comboboxu2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboboxu2ItemStateChanged(evt);
+            }
+        });
+
+        comboboxu3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DC", "Marvel", "Capcom", "Mortal Kombat" }));
+        comboboxu3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboboxu3ItemStateChanged(evt);
+            }
+        });
+
+        jlist3.setModel(new DefaultListModel());
+        jScrollPane3.setViewportView(jlist3);
+
+        jlist2.setModel(new DefaultListModel());
+        jScrollPane4.setViewportView(jlist2);
+
+        jButton2.setBackground(new java.awt.Color(102, 255, 102));
+        jButton2.setText("Batalla");
+
+        jButton3.setBackground(new java.awt.Color(255, 204, 204));
+        jButton3.setText("Volver");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboboxu2, 0, 330, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4))
+                .addGap(62, 62, 62)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addComponent(comboboxu3, 0, 330, Short.MAX_VALUE))
+                .addGap(43, 43, 43))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboboxu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboboxu3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addGap(23, 23, 23))
+        );
+
+        javax.swing.GroupLayout framebatallaLayout = new javax.swing.GroupLayout(framebatalla.getContentPane());
+        framebatalla.getContentPane().setLayout(framebatallaLayout);
+        framebatallaLayout.setHorizontalGroup(
+            framebatallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        framebatallaLayout.setVerticalGroup(
+            framebatallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panelmenu.setBackground(new java.awt.Color(255, 102, 102));
@@ -482,6 +594,11 @@ public class Menu extends javax.swing.JFrame {
 
         button_batalla.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         button_batalla.setText("Simulación de Batalla");
+        button_batalla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_batallaMouseClicked(evt);
+            }
+        });
 
         button_listado.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         button_listado.setText("Listado de Personajes");
@@ -632,6 +749,8 @@ public class Menu extends javax.swing.JFrame {
                 
                 popupmenutree.show(evt.getComponent(), evt.getX(), evt.getY());
                 
+            }else if (nodo_actual.getUserObject().equals("DC")||nodo_actual.getUserObject().equals("Marvel")||nodo_actual.getUserObject().equals("Capcom")||nodo_actual.getUserObject().equals("Mortal Kombat")){
+                popupmenuuniverso.show(evt.getComponent(), evt.getX(), evt.getY());
             }
             
             
@@ -640,22 +759,262 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jtreeMouseClicked
 
     private void buttoncrear1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttoncrear1MouseClicked
-        // TODO add your handling code here:
+        ((Personaje)nodo_actual.getUserObject()).setNombre(textfieldnombre1.getText());
+        ((Personaje)nodo_actual.getUserObject()).setUniverso(comboboxu1.getSelectedItem().toString());
+        ((Personaje)nodo_actual.getUserObject()).setPoder(textfieldpoder1.getText());
+        ((Personaje)nodo_actual.getUserObject()).setDebilidad(textfielddebilidad1.getText());
+        ((Personaje)nodo_actual.getUserObject()).setMental((int) spinnermental1.getValue());
+        ((Personaje)nodo_actual.getUserObject()).setHp((int) spinnerhp1.getValue());
+        ((Personaje)nodo_actual.getUserObject()).setFuerza((int) spinnerfuerza1.getValue());
+        ((Personaje)nodo_actual.getUserObject()).setFisica((int) spinnerfisica1.getValue());
+        
+        framemodificar.setVisible(false);
+        framelistado.pack();
+        framelistado.setLocationRelativeTo(this);
+        framelistado.setVisible(true);
     }//GEN-LAST:event_buttoncrear1MouseClicked
 
     private void menuitemmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitemmodificarActionPerformed
-    
+        framelistado.setVisible(false);
+        framemodificar.pack();
+        framemodificar.setLocationRelativeTo(this);
+        framemodificar.setVisible(true);
+        Personaje p = (Personaje)nodo_actual.getUserObject();
+        
+        textfieldnombre1.setText(p.getNombre());
+        textfieldpoder1.setText(p.getPoder());
+        textfielddebilidad1.setText(p.getDebilidad());
+        //Para el combobox
+        int combo=3;
+        if(p.getUniverso().equals("DC")){
+            combo = 0;
+        }else if(p.getUniverso().equals("Marvel")){
+            combo = 1;
+        }else if (p.getUniverso().equals("Capcom")){
+            combo= 2;
+        }
+        comboboxu1.setSelectedIndex(combo);
+        spinnerfuerza1.setValue(p.getFuerza());
+        spinnerfisica1.setValue(p.getFisica());
+        spinnerhp1.setValue(p.getHp());
+        spinnermental1.setValue(p.getMental());
+        
+        
     }//GEN-LAST:event_menuitemmodificarActionPerformed
 
     private void menuitemeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitemeliminarActionPerformed
         DefaultTreeModel modelo = (DefaultTreeModel) jtree.getModel();
         DefaultMutableTreeNode root = (DefaultMutableTreeNode) modelo.getRoot();
-        modelo.removeNodeFromParent(nodo_actual);
-        
+        if(nodo_actual.getParent().getChildCount()== 1){
+            modelo.removeNodeFromParent(nodo_actual.getPreviousNode());
+        }else{
+            modelo.removeNodeFromParent(nodo_actual);
+        }
         modelo.reload();
         
         
     }//GEN-LAST:event_menuitemeliminarActionPerformed
+
+    private void menuitemlistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitemlistarActionPerformed
+        DefaultListModel modelo = (DefaultListModel) jlist.getModel();
+        Personaje p = (Personaje)nodo_actual.getUserObject();
+        textfielimprimidor.setText("");
+        modelo.removeAllElements();
+        textfielimprimidor.setText(p.toString());
+        
+        modelo.addElement(p.toStringnombre());
+        jlist.setModel(modelo);
+    }//GEN-LAST:event_menuitemlistarActionPerformed
+
+    private void itemlistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemlistarActionPerformed
+        textfielimprimidor.setText("");
+        textfielimprimidor.setText(nodo_actual.toString());
+        DefaultListModel modelo = (DefaultListModel) jlist.getModel();
+        modelo.removeAllElements();
+        Personaje p;
+        if(nodo_actual.getUserObject().equals("DC")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("DC")){
+                    p = listapersonajes.get(i);
+                    modelo.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(nodo_actual.getUserObject().equals("Marvel")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Marvel")){
+                    p = listapersonajes.get(i);
+                    modelo.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(nodo_actual.getUserObject().equals("Capcom")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Capcom")){
+                    p = listapersonajes.get(i);
+                    modelo.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(nodo_actual.getUserObject().equals("Mortal Kombat")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Mortal Kombat")){
+                    p = listapersonajes.get(i);
+                    modelo.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }
+        
+        jlist.setModel(modelo);
+    }//GEN-LAST:event_itemlistarActionPerformed
+
+    private void button_batallaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_batallaMouseClicked
+        this.setVisible(false);
+        framebatalla.pack();
+        framebatalla.setLocationRelativeTo(this);
+        framebatalla.setVisible(true);
+        DefaultListModel modelo2 = (DefaultListModel) jlist2.getModel();
+        modelo2.removeAllElements();
+        DefaultListModel modelo3 = (DefaultListModel) jlist3.getModel();
+        modelo3.removeAllElements();
+        Personaje p;
+        //primer combo box
+        if(comboboxu2.getSelectedItem().equals("DC")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("DC")){
+                    p = listapersonajes.get(i);
+                    modelo2.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(comboboxu2.getSelectedItem().equals("Marvel")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Marvel")){
+                    p = listapersonajes.get(i);
+                    modelo2.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(comboboxu2.getSelectedItem().equals("Capcom")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Capcom")){
+                    p = listapersonajes.get(i);
+                    modelo2.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(comboboxu2.getSelectedItem().equals("Mortal Kombat")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Mortal Kombat")){
+                    p = listapersonajes.get(i);
+                    modelo2.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }
+        //segundo combobox
+        if(comboboxu3.getSelectedItem().equals("DC")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("DC")){
+                    p = listapersonajes.get(i);
+                    modelo3.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(comboboxu3.getSelectedItem().equals("Marvel")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Marvel")){
+                    p = listapersonajes.get(i);
+                    modelo3.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(comboboxu3.getSelectedItem().equals("Capcom")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Capcom")){
+                    p = listapersonajes.get(i);
+                    modelo3.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(comboboxu3.getSelectedItem().equals("Mortal Kombat")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Mortal Kombat")){
+                    p = listapersonajes.get(i);
+                    modelo3.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }
+        
+    }//GEN-LAST:event_button_batallaMouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        framebatalla.setVisible(false);
+        this.pack();
+        this.setLocationRelativeTo(this);
+        this.setVisible(true);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void comboboxu2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboboxu2ItemStateChanged
+        Personaje p;
+        DefaultListModel modelo2 = (DefaultListModel) jlist2.getModel();
+        modelo2.removeAllElements();
+        if(comboboxu2.getSelectedItem().equals("DC")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("DC")){
+                    p = listapersonajes.get(i);
+                    modelo2.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(comboboxu2.getSelectedItem().equals("Marvel")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Marvel")){
+                    p = listapersonajes.get(i);
+                    modelo2.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(comboboxu2.getSelectedItem().equals("Capcom")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Capcom")){
+                    p = listapersonajes.get(i);
+                    modelo2.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(comboboxu2.getSelectedItem().equals("Mortal Kombat")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Mortal Kombat")){
+                    p = listapersonajes.get(i);
+                    modelo2.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }
+        jlist2.setModel(modelo2);
+    }//GEN-LAST:event_comboboxu2ItemStateChanged
+
+    private void comboboxu3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboboxu3ItemStateChanged
+        DefaultListModel modelo3 = (DefaultListModel) jlist3.getModel();
+        Personaje p;
+        if(comboboxu3.getSelectedItem().equals("DC")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("DC")){
+                    p = listapersonajes.get(i);
+                    modelo3.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(comboboxu3.getSelectedItem().equals("Marvel")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Marvel")){
+                    p = listapersonajes.get(i);
+                    modelo3.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(comboboxu3.getSelectedItem().equals("Capcom")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Capcom")){
+                    p = listapersonajes.get(i);
+                    modelo3.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }else if(comboboxu3.getSelectedItem().equals("Mortal Kombat")){
+            for (int i = 0; i < listapersonajes.size(); i++) {
+                if(listapersonajes.get(i).getUniverso().equals("Mortal Kombat")){
+                    p = listapersonajes.get(i);
+                    modelo3.addElement(p + "-> "+ p.toStringnombre());
+                }
+            }
+        }
+        jlist3.setModel(modelo3);
+    }//GEN-LAST:event_comboboxu3ItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -701,10 +1060,16 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton buttoncrear1;
     private javax.swing.JComboBox<String> comboboxu;
     private javax.swing.JComboBox<String> comboboxu1;
+    private javax.swing.JComboBox<String> comboboxu2;
+    private javax.swing.JComboBox<String> comboboxu3;
     private javax.swing.JFrame frameagregar;
+    private javax.swing.JFrame framebatalla;
     private javax.swing.JFrame framelistado;
     private javax.swing.JFrame framemodificar;
+    private javax.swing.JMenuItem itemlistar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -728,15 +1093,21 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JList<String> jlist;
+    private javax.swing.JList<String> jlist2;
+    private javax.swing.JList<String> jlist3;
     private javax.swing.JTree jtree;
     private javax.swing.JMenuItem menuitemeliminar;
     private javax.swing.JMenuItem menuitemlistar;
     private javax.swing.JMenuItem menuitemmodificar;
     private javax.swing.JPanel panelmenu;
     private javax.swing.JPopupMenu popupmenutree;
+    private javax.swing.JPopupMenu popupmenuuniverso;
     private javax.swing.JSpinner spinnerfisica;
     private javax.swing.JSpinner spinnerfisica1;
     private javax.swing.JSpinner spinnerfuerza;
@@ -751,6 +1122,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField textfieldnombre1;
     private javax.swing.JTextField textfieldpoder;
     private javax.swing.JTextField textfieldpoder1;
+    private javax.swing.JTextField textfielimprimidor;
     // End of variables declaration//GEN-END:variables
     ArrayList<Personaje> listapersonajes = new ArrayList();
     DefaultMutableTreeNode nodo_actual;
