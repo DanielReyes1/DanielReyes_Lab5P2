@@ -1166,12 +1166,12 @@ public class Menu extends javax.swing.JFrame {
         String area= "";
         if(textfieldindicadorturnos.getText().contains(jlist2.getSelectedValue().split("-")[0])){
             area+=  textareasimulacion.getText();
-            textareasimulacion.setText(area +"\nEl jugador ha usado su ataque fuerte" + jlist2.getSelectedValue().split("-")[0]+ " le ha quitado mucha vida a "+ jlist3.getSelectedValue().split("-")[0] );
+            textareasimulacion.setText(area +"\n"+  jlist2.getSelectedValue().split("-")[0]+" ha usado su ataque fuerte y le ha quitado mucha vida a "+ jlist3.getSelectedValue().split("-")[0] );
             textfieldindicadorturnos.setText("");
             textfieldindicadorturnos.setText("Turno del jugador "+jlist3.getSelectedValue().split("-")[0] );
         }else{
             area+=  textareasimulacion.getText();
-            textareasimulacion.setText(area +"\nEl jugador ha usado su ataque fuerte" + jlist2.getSelectedValue().split("-")[0]+ " le ha quitado mucha vida a "+ jlist3.getSelectedValue().split("-")[0] );
+            textareasimulacion.setText(area +"\n"+  jlist3.getSelectedValue().split("-")[0]+" ha usado su ataque fuerte y le ha quitado mucha vida a "+ jlist2.getSelectedValue().split("-")[0] );
             textfieldindicadorturnos.setText("");
             textfieldindicadorturnos.setText("Turno del jugador "+jlist2.getSelectedValue().split("-")[0] );
         }
@@ -1181,15 +1181,16 @@ public class Menu extends javax.swing.JFrame {
 String area= "";
         if(textfieldindicadorturnos.getText().contains(jlist2.getSelectedValue().split("-")[0])){
             area+=  textareasimulacion.getText();
-            textareasimulacion.setText(area +"\nEl jugador ha usado su ataque mental" + jlist2.getSelectedValue().split("-")[0]+ " le ha quitado vida a "+ jlist3.getSelectedValue().split("-")[0] );
+            textareasimulacion.setText(area +"\n"+  jlist2.getSelectedValue().split("-")[0]+" ha usado su ataque mental y le ha quitado vida a "+ jlist3.getSelectedValue().split("-")[0] );
             textfieldindicadorturnos.setText("");
             textfieldindicadorturnos.setText("Turno del jugador "+jlist3.getSelectedValue().split("-")[0] );
         }else{
             area+=  textareasimulacion.getText();
-            textareasimulacion.setText(area +"\nEl jugador ha usado su ataque mental" + jlist2.getSelectedValue().split("-")[0]+ " le ha quitado vida a "+ jlist3.getSelectedValue().split("-")[0] );
+            textareasimulacion.setText(area +"\n"+  jlist3.getSelectedValue().split("-")[0]+" ha usado su ataque mental y le ha quitado vida a "+ jlist2.getSelectedValue().split("-")[0] );
             textfieldindicadorturnos.setText("");
             textfieldindicadorturnos.setText("Turno del jugador "+jlist2.getSelectedValue().split("-")[0] );
         }
+                                   
     }//GEN-LAST:event_buttonMentalMouseClicked
 
     /**
