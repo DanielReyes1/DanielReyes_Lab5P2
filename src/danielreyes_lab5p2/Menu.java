@@ -6,6 +6,7 @@ package danielreyes_lab5p2;
 
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
@@ -526,6 +527,11 @@ public class Menu extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(102, 255, 102));
         jButton2.setText("Batalla");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 204, 204));
         jButton3.setText("Volver");
@@ -595,13 +601,33 @@ public class Menu extends javax.swing.JFrame {
         textfieldindicadorturnos.setEditable(false);
 
         buttonFuerza.setText("Fuerza");
+        buttonFuerza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonFuerzaMouseClicked(evt);
+            }
+        });
 
         buttonFisico.setText("Física");
+        buttonFisico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonFisicoMouseClicked(evt);
+            }
+        });
 
         buttonMental.setText("Mental");
+        buttonMental.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonMentalMouseClicked(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(255, 153, 102));
         jButton4.setText("X");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1060,6 +1086,7 @@ public class Menu extends javax.swing.JFrame {
     private void comboboxu3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboboxu3ItemStateChanged
         DefaultListModel modelo3 = (DefaultListModel) jlist3.getModel();
         Personaje p;
+        modelo3.removeAllElements();
         if(comboboxu3.getSelectedItem().equals("DC")){
             for (int i = 0; i < listapersonajes.size(); i++) {
                 if(listapersonajes.get(i).getUniverso().equals("DC")){
@@ -1091,6 +1118,79 @@ public class Menu extends javax.swing.JFrame {
         }
         jlist3.setModel(modelo3);
     }//GEN-LAST:event_comboboxu3ItemStateChanged
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        frameSimulacion.setVisible(true);
+        framebatalla.pack();
+        framebatalla.setLocationRelativeTo(this);
+        framebatalla.setVisible(true);
+                
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        if(jlist2.isSelectionEmpty()== false && jlist3.isSelectionEmpty()== false){
+            framebatalla.setVisible(false);
+            frameSimulacion.pack();
+            frameSimulacion.setLocationRelativeTo(this);
+            frameSimulacion.setVisible(true);
+
+            String jugador1 = jlist2.getSelectedValue();
+            String jugador2 = jlist3.getSelectedValue();
+            textfieldindicadorturnos.setText("Turno del jugador " + jugador1.split("-")[0]);
+        }else{
+            JOptionPane.showMessageDialog(frameSimulacion, "Debe seleccionar un personaje de cada ");
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void buttonFuerzaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonFuerzaMouseClicked
+        String area= "";
+        if(textfieldindicadorturnos.getText().contains(jlist2.getSelectedValue().split("-")[0])){
+            area+=  textareasimulacion.getText();
+            textareasimulacion.setText(area +"\nEl jugador " + jlist2.getSelectedValue().split("-")[0]+ " ha subido sus puntos de vida" );
+            textfieldindicadorturnos.setText("");
+            textfieldindicadorturnos.setText("Turno del jugador "+jlist3.getSelectedValue().split("-")[0] );
+        }else{
+            area+=  textareasimulacion.getText();
+            textareasimulacion.setText(area +"\nEl jugador " + jlist3.getSelectedValue().split("-")[0]+ " ha subido sus puntos de vida" );
+            textfieldindicadorturnos.setText("");
+            textfieldindicadorturnos.setText("Turno del jugador "+jlist2.getSelectedValue().split("-")[0] );
+        }
+        
+    }//GEN-LAST:event_buttonFuerzaMouseClicked
+
+    private void buttonFisicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonFisicoMouseClicked
+        String area= "";
+        if(textfieldindicadorturnos.getText().contains(jlist2.getSelectedValue().split("-")[0])){
+            area+=  textareasimulacion.getText();
+            textareasimulacion.setText(area +"\nEl jugador ha usado su ataque fuerte" + jlist2.getSelectedValue().split("-")[0]+ " le ha quitado mucha vida a "+ jlist3.getSelectedValue().split("-")[0] );
+            textfieldindicadorturnos.setText("");
+            textfieldindicadorturnos.setText("Turno del jugador "+jlist3.getSelectedValue().split("-")[0] );
+        }else{
+            area+=  textareasimulacion.getText();
+            textareasimulacion.setText(area +"\nEl jugador ha usado su ataque fuerte" + jlist2.getSelectedValue().split("-")[0]+ " le ha quitado mucha vida a "+ jlist3.getSelectedValue().split("-")[0] );
+            textfieldindicadorturnos.setText("");
+            textfieldindicadorturnos.setText("Turno del jugador "+jlist2.getSelectedValue().split("-")[0] );
+        }
+    }//GEN-LAST:event_buttonFisicoMouseClicked
+
+    private void buttonMentalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMentalMouseClicked
+String area= "";
+        if(textfieldindicadorturnos.getText().contains(jlist2.getSelectedValue().split("-")[0])){
+            area+=  textareasimulacion.getText();
+            textareasimulacion.setText(area +"\nEl jugador ha usado su ataque mental" + jlist2.getSelectedValue().split("-")[0]+ " le ha quitado vida a "+ jlist3.getSelectedValue().split("-")[0] );
+            textfieldindicadorturnos.setText("");
+            textfieldindicadorturnos.setText("Turno del jugador "+jlist3.getSelectedValue().split("-")[0] );
+        }else{
+            area+=  textareasimulacion.getText();
+            textareasimulacion.setText(area +"\nEl jugador ha usado su ataque mental" + jlist2.getSelectedValue().split("-")[0]+ " le ha quitado vida a "+ jlist3.getSelectedValue().split("-")[0] );
+            textfieldindicadorturnos.setText("");
+            textfieldindicadorturnos.setText("Turno del jugador "+jlist2.getSelectedValue().split("-")[0] );
+        }
+    }//GEN-LAST:event_buttonMentalMouseClicked
 
     /**
      * @param args the command line arguments
